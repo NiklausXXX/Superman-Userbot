@@ -30,7 +30,7 @@ async def adminlist(client: Client, message: Message):
         except:
             nama = a.user.first_name
         if nama is None:
-            nama = "☠️ Deleted account"
+            nama = "☠️ Akun Terhapus"
         if a.status == "administrator":
             if a.user.is_bot:
                 badmin.append(mention_markdown(a.user.id, nama))
@@ -41,22 +41,22 @@ async def adminlist(client: Client, message: Message):
     admin.sort()
     badmin.sort()
     totaladmins = len(creator) + len(admin) + len(badmin)
-    teks = "**Admins in {}**\n".format(grup.title)
-    teks += "╒═══「 Creator 」\n"
+    teks = "**Admins di {}**\n".format(grup.title)
+    teks += "╒═══「 Pemilik 」\n"
     for x in creator:
         teks += "│ • {}\n".format(x)
         if len(teks) >= 4096:
             await message.reply(message.chat.id, teks, reply_to_message_id=replyid)
             teks = ""
             toolong = True
-    teks += "╞══「 {} Human Administrator 」\n".format(len(admin))
+    teks += "╞══「 {} Para Admin 」\n".format(len(admin))
     for x in admin:
         teks += "│ • {}\n".format(x)
         if len(teks) >= 4096:
             await message.reply(message.chat.id, teks, reply_to_message_id=replyid)
             teks = ""
             toolong = True
-    teks += "╞══「 {} Bot Administrator 」\n".format(len(badmin))
+    teks += "╞══「 {} Bot Admin 」\n".format(len(badmin))
     for x in badmin:
         teks += "│ • {}\n".format(x)
         if len(teks) >= 4096:
@@ -72,14 +72,14 @@ async def adminlist(client: Client, message: Message):
 
 @Client.on_message(filters.command(["kickdel", "zombies"], ["."]) & filters.me)
 async def kickdel_cmd(client: Client, message: Message):
-    await message.edit("<b>Kicking deleted accounts...</b>")
+    await message.edit("<b>Sedang membasmi Akun Terhapus...</b>")
     # noinspection PyTypeChecker
     values = [
         await message.chat.ban_member(user.user.id, int(time()) + 31)
         for member in await message.chat.get_members()
         if member.user.is_deleted
     ]
-    await message.edit(f"<b>Successfully kicked {len(values)} deleted account(s)</b>")
+    await message.edit(f"<b>Sudah dibasmi {len(values)} Akun Terhapus(s)</b>")
 
 
 @Client.on_message(filters.me & filters.command(["reportadmin", "reportadmins", "report"], ["."]))
@@ -106,7 +106,7 @@ async def report_admin(client: Client, message: Message):
         if text:
             teks = '{}'.format(html.escape(text))
         else:
-            teks = "Calling admins in {}.".format(grup.title)
+            teks = "Memanggil Admin di {}.".format(grup.title)
     teks += "".join(admin)
     if message.reply_to_message:
         await client.send_message(message.chat.id, teks, reply_to_message_id=message.reply_to_message.message_id,
@@ -121,7 +121,7 @@ async def tag_all_users(client: Client, message: Message):
     if len(message.text.split()) >= 2:
         text = message.text.split(None, 1)[1]
     else:
-        text = "Hi all 🙃"
+        text = "Halo semuanya hehe 🙃"
     kek = client.iter_chat_members(message.chat.id)
     async for a in kek:
         if not a.user.is_bot:
@@ -152,10 +152,10 @@ async def get_list_bots(client: Client, message: Message):
         except:
             nama = a.user.first_name
         if nama is None:
-            nama = "☠️ Deleted account"
+            nama = "☠️ Akun Terhapus"
         if a.user.is_bot:
             bots.append(mention_markdown(a.user.id, nama))
-    teks = "**All bots in group {}**\n".format(grup.title)
+    teks = "**Semua Bot di Grup {}**\n".format(grup.title)
     teks += "╒═══「 Bots 」\n"
     for x in bots:
         teks += "│ • {}\n".format(x)
