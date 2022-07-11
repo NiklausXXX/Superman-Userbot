@@ -12,7 +12,7 @@ LOG_CHAT = LOG_GROUP
 @Client.on_message(filters.command("clearwelcome", ["."]) & filters.me)
 async def welcome(client, message):
     await Zaid.clear_welcome(str(message.chat.id))
-    await message.edit("**I am sulking not to say hello anymore :(**")
+    await message.edit("**Saya merajuk untuk tidak menyapa lagi :(**")
 
 
 @Client.on_message(filters.create(welcome_chat) & filters.new_chat_members, group=-2)
@@ -75,12 +75,12 @@ async def new_welcome(app: Client, message):
 async def setwelcome(app: Client, message):
     reply = message.reply_to_message
     if not reply:
-        await message.edit("**Reply to a message or media to set welcome message.**")
+        await message.edit("**Balas ke pesan atau media untuk mengatur pesan selamat datang.**")
         return
     frwd = await app.copy_message(LOG_CHAT, message.chat.id, reply.message_id)
     msg_id = frwd.message_id
     await Zaid.save_welcome(str(message.chat.id), msg_id)
-    await message.edit("**Welcome message has been saved.**")
+    await message.edit("**Pesan Welcome sudah disimpan.**")
 
 
 from handlers.help import *
@@ -89,7 +89,7 @@ from handlers.help import *
 add_command_help(
     "welcome",
     [
-        [".clearwelcome", " -> Disables welcome message in the chat."],
-        [".setwelcome [keyword]", " -> Sets a custom welcome message."],
+        [".clearwelcome", " -> Matikan Pesan Welcome."],
+        [".setwelcome [keyword]", " -> Atur pesan Welcome."],
     ],
 )
