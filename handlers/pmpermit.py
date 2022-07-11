@@ -16,31 +16,31 @@ USERS_AND_WARNS = {}
 async def pmguard(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**Set limit to what?**")
+        await message.edit("**Atur Limit untuk apa?**")
         return
     await Zaid.set_limit(int(arg))
-    await message.edit(f"**Limit set to {arg}**")
+    await message.edit(f"**Limit diatur untuk {arg}**")
 
 
 @Client.on_message(filters.command("setpmmsg", ["."]) & filters.me)
 async def setpmmsg(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**What message to set**")
+        await message.edit("**Masukan Pesan untuk diatur.**")
         return
     if arg == "default":
         await Zaid.set_permit_message(Zaid.PMPERMIT_MESSAGE)
-        await message.edit("**Anti_PM message set to default**.")
+        await message.edit("**Anti_PM pesan diatur ke default**.")
         return
     await Zaid.set_permit_message(f"`{arg}`")
-    await message.edit("**Custom anti-pm message set**")
+    await message.edit("**Custom Anti-PM diatur.**")
 
 
 @Client.on_message(filters.command("setblockmsg", ["."]) & filters.me)
 async def setpmmsg(client, message):
     arg = get_arg(message)
     if not arg:
-        await message.edit("**What message to set**")
+        await message.edit("**Pesan diatur untuk apa?**")
         return
     if arg == "default":
         await Zaid.set_block_message(Zaid.BLOCKED)
@@ -55,7 +55,7 @@ async def allow(client, message):
     chat_id = message.chat.id
     pmpermit, pm_message, limit, block_message = await Zaid.get_pm_settings()
     await Zaid.allow_user(chat_id)
-    await message.edit(f"**I have allowed [you](tg://user?id={chat_id}) to PM me.**")
+    await message.edit(f"**[you](tg://user?id={chat_id}) Sudah diizinkan untuk PM saya.**")
     async for message in app.search_messages(
         chat_id=message.chat.id, query=pm_message, limit=1, from_user="me"
     ):
@@ -67,7 +67,7 @@ async def allow(client, message):
 async def deny(client, message):
     chat_id = message.chat.id
     await Zectdb.deny_user(chat_id)
-    await message.edit(f"**I have denied [you](tg://user?id={chat_id}) to PM me.**")
+    await message.edit(f"**[you](tg://user?id={chat_id}) Tidak diizinkan untuk PM saya.**")
 
 
 @Client.on_message(
