@@ -9,9 +9,9 @@ from git.exc import GitCommandError, InvalidGitRepositoryError
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["restart", "stop"], ["."]))
 async def restart(client, m: Message):
-    reply = await m.reply_text("Restarting....")     
+    reply = await m.reply_text("🚑")     
     await m.delete() 
     await reply.edit(
-        "<b>Reboot has been initiated successfully! Wait for 1 - 2 minutes until the bot restarts.</b>"
+        "<b>🔴Sedang Reboot!.</b>"
     )
     os.system(f"kill -9 {os.getpid()} && python3 main.py")
