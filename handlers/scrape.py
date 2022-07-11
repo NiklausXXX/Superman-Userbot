@@ -7,7 +7,7 @@ from handlers.help import *
 
 @Client.on_message(filters.command(["inviteall", "kidnapall"], [".", "!"]) & filters.me)
 async def inv(client: Client, message: Message):
-    zaid = await message.reply_text("⚡ Gime Title also\n ex: /inviteall @testing")
+    zaid = await message.reply_text("⚡ Kasih judul juga dong\n contoh: /inviteall @testing")
     text = message.text.split(" ", 1)
     queryy = text[1]
     chat = await client.get_chat(queryy)
