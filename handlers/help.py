@@ -25,7 +25,7 @@ async def module_help(client: Client, message: Message):
 
         ac = PrettyTable()
         ac.header = False
-        ac.title = "**ZAID USERBOT MODULES!**"
+        ac.title = "**SUPERMAN USERBOT MODULES!**"
         ac.align = "l"
 
         for x in split_list(sorted(CMD_HELP.keys()), 2):
@@ -36,7 +36,7 @@ async def module_help(client: Client, message: Message):
     if help_arg:
         if help_arg in CMD_HELP:
             commands: dict = CMD_HELP[help_arg]
-            this_command = "**Help for**\n"
+            this_command = "**CMD untuk**\n"
             this_command += heading.format(str(help_arg)).upper()
 
             for x in commands:
@@ -45,7 +45,7 @@ async def module_help(client: Client, message: Message):
             await message.edit(this_command, parse_mode="markdown")
         else:
             await message.edit(
-                "`Please specify a valid module name.`", parse_mode="markdown"
+                "`Harap tentukan nama modul yang valid.`", parse_mode="markdown"
             )
 
     await asyncio.sleep(10)
