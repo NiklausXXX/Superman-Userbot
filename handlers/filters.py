@@ -14,25 +14,25 @@ from helpers.mongo.filtersdb import (
 
 @Client.on_message(filters.command("stop", ["."]) & filters.me)
 async def del_filterz(client: Client, message):
-    note_ = await message.edit("**Processing..**")
+    note_ = await message.edit("**Sedang diproses..**")
     note_name = get_arg(message)
     if not note_name:
-        await note_.edit("**Give A Filter Name!**")
+        await note_.edit("**Kasih Nama Filter!**")
         return
     note_name = note_name.lower()
     if not await filters_info(note_name, int(message.chat.id)):
-        await note_.edit("**Filter Not Found!**")
+        await note_.edit("**Filter tidak ada!**")
         return
     await del_filters(note_name, int(message.chat.id))
-    await note_.edit(f"**Filter `{note_name}` Deleted Successfully!**")
+    await note_.edit(f"**Filter `{note_name}` Dihapus!**")
 
 
 @Client.on_message(filters.command("filters", ["."]) & filters.me)
 async def show_filters(client: Client, message):
-    pablo = await message.edit("**Processing..**")
+    pablo = await message.edit("**Sedang diproses..**")
     poppy = await all_filters(int(message.chat.id))
     if poppy is False:
-        await pablo.edit("**No Filters Found In This Chat...**")
+        await pablo.edit("**Tidak ada Filter di Chat ini...**")
         return
     kk = ""
     for Escobar in poppy:
@@ -45,19 +45,19 @@ async def show_filters(client: Client, message):
 
 @Client.on_message(filters.command("filter", ["."]) & filters.me)
 async def s_filters(app: Client, message):
-    note_ = await message.edit("**Processing..**")
+    note_ = await message.edit("**Sedang diproses..**")
     note_name = get_arg(message)
     if not note_name:
-        await note_.edit("**Give A Filter Name!**")
+        await note_.edit("**Kasih Nama Filter!**")
         return
     if not message.reply_to_message:
-        await note_.edit("Reply To Message To Save As Filter!")
+        await note_.edit("Reply pesan untuk membuat Filter!")
         return
     note_name = note_name.lower()
     msg = message.reply_to_message
     copied_msg = await msg.copy(int(LOG_CHAT))
     await add_filters(note_name, int(message.chat.id), copied_msg.message_id)
-    await note_.edit(f"**Done! `{note_name}` Added To Filters List!**")
+    await note_.edit(f"**Sudah Selesai! `{note_name}` ditambahkan ke Filters List!**")
 
 
 @Client.on_message(
@@ -89,9 +89,9 @@ async def filter_s(client: Client, message):
             if text_ != "":
                 mention = message.from_user.mention
                 user_id = message.from_user.id
-                user_name = message.from_user.username or "No Username"
+                user_name = message.from_user.username or "Username Tidak Ada."
                 first_name = message.from_user.first_name
-                last_name = message.from_user.last_name or "No Last Name"
+                last_name = message.from_user.last_name or "Nama Belakang Tidak Ada."
                 text_ = text_.format(
                     mention=mention,
                     user_id=user_id,
@@ -128,13 +128,13 @@ async def is_media(message):
 
 @Client.on_message(filters.command("stopall", ["."]) & filters.me)
 async def del_all_filters(client: Client, message):
-    pablo = await message.edit("**Processing..**")
+    pablo = await message.edit("**Sedang diproses..**")
     poppy = await all_filters(int(message.chat.id))
     if poppy is False:
-        await pablo.edit("**No Filters Found In This Chat...**")
+        await pablo.edit("**Tidak ada Filter di Chat ini...**")
         return
     await filters_del(int(message.chat.id))
-    await pablo.edit("**Deleted All The Filters Successfully!!**")
+    await pablo.edit("**Semua Filter sudah dihapus!!**")
 
 
 from handlers.help import *
