@@ -114,7 +114,7 @@ async def alive(client: Client, e: Message):
             ids += 1
         if bot50:
             ids += 1
-        Alive_msg = f"ıllıllı Superman 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐈𝐬 𝐎𝐧 𝐅𝐢𝐫𝐞 🔥 ıllıllı\n\n"
+        Alive_msg = f"ıllıllı 𝐒𝐮𝐩𝐞𝐫𝐦𝐚𝐧 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐀𝐤𝐭𝐢𝐟 ıllıllı\n\n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
         Alive_msg += f"► Vᴇʀsɪᴏɴ : `Beta.0.1` \n"
         Alive_msg += f"► ᴘʏʀᴏ ᴠᴇʀsɪᴏɴ : `{pyro_vr}` \n"
@@ -130,16 +130,16 @@ async def alive(client: Client, e: Message):
                         "• 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 •", url="https://t.me/kampungmaifudin")
                 ], [
                     InlineKeyboardButton(
-                        "• Group •", url="https://t.me/maifudin")
+                        "• 𝐆𝐫𝐨𝐮𝐩 •", url="https://t.me/maifudin")
                 ]],
         ),
     ) 
     except Exception as lol:         
-        Alive_msg = f"𝐙𝐚𝐢𝐝 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐈𝐬 𝐎𝐧 𝐅𝐢𝐫𝐞 🔥 \n\n"
+        Alive_msg = f"𝐒𝐮𝐩𝐞𝐫𝐦𝐚𝐧 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 𝐀𝐤𝐭𝐢𝐟 \n\n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n"
         Alive_msg += f"► ᴠᴇʀsɪᴏɴ : `Beta.0.1` \n"
         Alive_msg += f"► Pʏʀᴏ ᴠᴇʀsɪᴏɴ : `1.4.15` \n"
-        Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ](https://t.me/Superior_Support) \n"
+        Alive_msg += f"► Sᴜᴘᴘᴏʀᴛ : [Jᴏɪɴ](https://t.me/maifudin) \n"
         Alive_msg += f"◈ ━━━━━━ ◆ ━━━━━━ ◈ \n\n"
         await e.reply_photo(
         photo=ALIVE_PIC,
@@ -147,10 +147,10 @@ async def alive(client: Client, e: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("• 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 •", url="https://t.me/Superior_Bots"),
+                    InlineKeyboardButton("• 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 •", url="https://t.me/kampungmaifudin"),
                 ],
                 [
-                    InlineKeyboardButton("• 𝐑𝐞𝐩𝐨 •", url="https://github.com/Itz-Zaid/Zaid-Userbot"),
+                    InlineKeyboardButton("• 𝐆𝐫𝐨𝐮𝐩 •", url="https://t.me/maifudin "),
                 ],
             ],
         ),
@@ -161,7 +161,7 @@ add_command_help(
     [
         [
             ".alive",
-            "This Command for check your bot working or nt",
+            "Buat Pamer Bot.",
         ]
     ],
 )
