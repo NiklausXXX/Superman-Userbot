@@ -9,7 +9,7 @@ from helpers.pyrohelper import get_arg
 
 @Client.on_message(filters.command(["tr", "translate"], ["."]) & filters.me)
 async def pytrans_tr(_, message: Message):
-  tr_msg = await message.edit("`Processing...`")
+  tr_msg = await message.edit("`Sedang diproses...`")
   r_msg = message.reply_to_message
   args = get_arg(message)
   if r_msg:
