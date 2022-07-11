@@ -24,7 +24,7 @@ def choose_random_font():
 
 @Client.on_message(filters.command('rlogo', ["."]) & filters.me)
 async def rlogo(client: Client, message: Message):
-    event = await edit_or_reply(message, "`Processing.....`")
+    event = await edit_or_reply(message, "`Sedang diproses.....`")
     text = get_text(message)
     if not text:
         await event.edit(
@@ -44,19 +44,19 @@ async def rlogo(client: Client, message: Message):
         font=font,
         fill=(random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)),
     )
-    file_name = "LogoBy@Zaid.png"
+    file_name = "LogoBy@Superman.png"
     await client.send_chat_action(message.chat.id, "upload_photo")
     img.save(file_name, "png")
     if message.reply_to_message:
         await client.send_photo(
             message.chat.id,
             photo=file_name,
-            caption="Made Using Zaid Userbot",
+            caption="Made Using Superman Userbot",
             reply_to_message_id=message.reply_to_message.message_id,
         )
     else:
         await client.send_photo(
-            message.chat.id, photo=file_name, caption="Made Using Zaid Userbot"
+            message.chat.id, photo=file_name, caption="Made Using Superman Userbot"
         )
     await client.send_chat_action(message.chat.id, "cancel")
     await event.delete()
