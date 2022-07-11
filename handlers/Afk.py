@@ -32,11 +32,11 @@ async def collect_afk_messages(UserBot: Client, message: Message):
 
         if GetChatID(message) not in CHAT_TYPE:
             text = (
-                f"`Beep boop. This is an automated message.\n"
-                f"I am not available right now.\n"
+                f"`Beep boop. Mau pergi AFK.\n"
+                f"Saya sedang AFK hehe.\n"
                 f"Last seen: {last_seen}\n"
                 f"Reason: ```{AFK_REASON.upper()}```\n"
-                f"See you after I'm done doing whatever I'm doing.`"
+                f"DADAH SEMWA AKU SUDAH KRINJ :(`"
             )
             await UserBot.send_message(
                 chat_id=GetChatID(message),
@@ -48,11 +48,11 @@ async def collect_afk_messages(UserBot: Client, message: Message):
         elif GetChatID(message) in CHAT_TYPE:
             if CHAT_TYPE[GetChatID(message)] == 50:
                 text = (
-                    f"`This is an automated message\n"
+                    f"`<b><u>Pesan Otomatis</b></u>\n"
                     f"Last seen: {last_seen}\n"
-                    f"This is the 10th time I've told you I'm AFK right now..\n"
-                    f"I'll get to you when I get to you.\n"
-                    f"No more auto messages for you`"
+                    f"Sudah 10x, Saya sedang AFK..\n"
+                    f"Tunggu pembalasan ku.\n"
+                    f"Tak ada ampun bagimu lagi.`"
                 )
                 await UserBot.send_message(
                     chat_id=GetChatID(message),
@@ -63,10 +63,10 @@ async def collect_afk_messages(UserBot: Client, message: Message):
                 return
             elif CHAT_TYPE[GetChatID(message)] % 5 == 0:
                 text = (
-                    f"`Hey I'm still not back yet.\n"
+                    f"`Saya masih belum kembali.\n"
                     f"Last seen: {last_seen}\n"
-                    f"Still busy: ```{AFK_REASON.upper()}```\n"
-                    f"Try pinging a bit later.`"
+                    f"Masih sibuk: ```{AFK_REASON.upper()}```\n"
+                    f"Tunggu beberapa saat kemudian.`"
                 )
                 await UserBot.send_message(
                     chat_id=GetChatID(message),
@@ -140,8 +140,8 @@ add_command_help(
     [
         [
             ".afk",
-            "Activates AFK mode with reason as anything after .afk\nUsage: ```.afk <reason>```",
+            "Mode AFK✔️ .afk\nUsage: ```.afk <reason>```",
         ],
-        ["!afk", "Deactivates AFK mode."],
+        ["!afk", "MODE AFK❌."],
     ],
 )
