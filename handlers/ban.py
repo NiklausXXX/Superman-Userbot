@@ -11,7 +11,7 @@ async def member_ban(client: Client, message: Message):
         me_m =await client.get_me
         me_ = await message.chat.get_member(int(me_m.id))
         if not me_.can_restrict_members:
-         await message.edit("`You Don't Have Ban Permission!`")
+         await message.edit("`Saya bukan Admin hehe ><`")
          return
         can_ban= True
         if can_ban:
@@ -22,7 +22,7 @@ async def member_ban(client: Client, message: Message):
                     usr = await client.get_users(message.command[1])
                     user_id = usr.id
             except IndexError:
-                await message.edit_text("I cant ban a void xD")
+                await message.edit_text("Saya tidak bisa melarang kekosongan xD")
                 return
             if user_id:
                 try:
@@ -41,7 +41,7 @@ async def member_ban(client: Client, message: Message):
                     return
 
                 except ChatAdminRequired:
-                    await message.edit_text("`permission denied`")
+                    await message.edit_text("`akses ditolak`")
                     return
 
                 except Exception as e:
@@ -49,7 +49,7 @@ async def member_ban(client: Client, message: Message):
                     return
 
         else:
-            await message.edit_text("`permission denied`")
+            await message.edit_text("`akses ditolak`")
             return
     else:
         await message.delete()
