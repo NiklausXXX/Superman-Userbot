@@ -9,15 +9,15 @@ async def purge(client: Client, message: Message):
     start_time = time.time()
     message_ids = []
     purge_len = 0
-    event = await message.edit_text("`Starting To Purge Messages!`")
+    event = await message.edit_text("`Mulai Membersihkan Pesan!`")
     me_m =await client.get_me()
     if message.chat.type in ["supergroup", "channel"]:
         me_ = await message.chat.get_member(int(me_m.id))
         if not me_.can_delete_messages:
-            await event.edit("`I Need Delete Permission To Do This!`")
+            await event.edit("`Saya perlu izin hapus!`")
             return
     if not message.reply_to_message:
-        await event.edit("`Reply To Message To Purge!`")
+        await event.edit("`Reply pesan untuk membersihkan!`")
         return
     async for msg in client.iter_history(
         chat_id=message.chat.id,
@@ -39,7 +39,7 @@ async def purge(client: Client, message: Message):
     end_time = time.time()
     u_time = round(end_time - start_time)
     await event.edit(
-        f"**>> Fast Purge Done!** \n**>> Total Message Purged :** `{purge_len}` \n**>> Time Taken :** `{u_time}`",
+        f"**>> Sudah Membersihkan!** \n**>> Total Pesan Dibersihkan :** `{purge_len}` \n**>> Waktu :** `{u_time}`",
     )
     await asyncio.sleep(3)
     await event.delete()
