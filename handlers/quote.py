@@ -12,10 +12,10 @@ SUDO = SUDO_USERS
 @Client.on_message(filters.me & filters.command(["q", "quote"], '.'))
 async def quotly(bot: Client, message: Message):
     if not message.reply_to_message:
-        await message.edit("Reply to any users text message")
+        await message.edit("Balas pesan teks pengguna mana pun.")
         return
 
-    await message.edit("```Making a Quote```")
+    await message.edit("```Sedang Mengkuot```")
 
     await message.reply_to_message.forward("@QuotLyBot")
 
@@ -34,11 +34,11 @@ async def quotly(bot: Client, message: Message):
             progress += random.randint(0, 5)
 
             if progress > 100:
-                await message.edit('There was a long running error')
+                await message.edit('Tidak Kuot 😭 sedang Erorr.')
                 return
 
             try:
-                await message.edit("```Making a Quote\nProcessing {}%```".format(progress))
+                await message.edit("```Membuat Kuot\nProcessing {}%```".format(progress))
             except:
                 await message.edit("ERROR")
 
