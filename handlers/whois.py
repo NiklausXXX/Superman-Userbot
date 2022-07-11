@@ -12,32 +12,32 @@ from helpers.PyroHelpers import ReplyCheck
 from handlers.help import add_command_help
 
 WHOIS = (
-    '**WHO IS "{full_name}"?**\n'
+    '**SIAPA SIH KAMU "{full_name}"?**\n'
     "[Link to profile](tg://user?id={user_id})\n"
     "════════════════\n"
     "UserID: `{user_id}`\n"
-    "First Name: `{first_name}`\n"
-    "Last Name: `{last_name}`\n"
+    "Nama Depan: `{first_name}`\n"
+    "Nama Belakang: `{last_name}`\n"
     "Username: `{username}`\n"
-    "Last Online: `{last_online}`\n"
-    "Common Groups: `{common_groups}`\n"
+    "Terakhir Online: `{last_online}`\n"
+    "Grup Umum: `{common_groups}`\n"
     "════════════════\n"
     "Bio:\n{bio}"
 )
 
 WHOIS_PIC = (
-    '**WHO IS "{full_name}"?**\n'
+    '**SIAPA SIH KAMU "{full_name}"?**\n'
     "[Link to profile](tg://user?id={user_id})\n"
     "════════════════\n"
     "UserID: `{user_id}`\n"
-    "First Name: `{first_name}`\n"
-    "Last Name: `{last_name}`\n"
+    "Nama Depan: `{first_name}`\n"
+    "Nama Belakang: `{last_name}`\n"
     "Username: `{username}`\n"
-    "Last Online: `{last_online}`\n"
-    "Common Groups: `{common_groups}`\n"
+    "Terakhir Online: `{last_online}`\n"
+    "Grup Umum: `{common_groups}`\n"
     "════════════════\n"
     "Profile Pics: `{profile_pics}`\n"
-    "Last Updated: `{profile_pic_update}`\n"
+    "Terakhir Diupdate: `{profile_pic_update}`\n"
     "════════════════\n"
     "Bio:\n{bio}"
 )
