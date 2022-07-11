@@ -6,7 +6,7 @@ from helpers.basic import edit_or_reply, get_text, get_user
 
 
 OWNER = os.environ.get("OWNER", None)
-BIO = os.environ.get("BIO", "Lҽɠҽɳԃαɾყ Oϝ #Zαιԃ UʂҽɾႦσƚ")
+BIO = os.environ.get("BIO", "See my village 🏕️@kampungmaifudin")
 
 
 
@@ -14,11 +14,11 @@ BIO = os.environ.get("BIO", "Lҽɠҽɳԃαɾყ Oϝ #Zαιԃ UʂҽɾႦσƚ")
 @Client.on_message(filters.command('clone', ["."]) & filters.me)
 async def clone(client: Client, message: Message):
   text = get_text(message)
-  op = await edit_or_reply(message, "`Cloning`")
+  op = await edit_or_reply(message, "`Mengkelon`")
   userk = get_user(message, text)[0]
   user_ = await client.get_users(userk)
   if not user_:
-    await op.edit("`Whom i should clone:(`")
+    await op.edit("`Sapa yang mau dikelon :3`")
     return
     
   get_bio = await client.get_chat(user_.id)
@@ -32,12 +32,12 @@ async def clone(client: Client, message: Message):
        first_name=f_name,
        bio=c_bio,
   )
-  await message.edit(f"**From now I'm** __{f_name}__")
+  await message.edit(f"**Mulai sekarang saya adalah ** __{f_name}__")
     
 
 @Client.on_message(filters.command('revert', ["."]) & filters.me)
 async def revert(client: Client, message: Message):
- await message.edit("`Reverting`")
+ await message.edit("`Kembali seperti Semula :)`")
  r_bio = BIO
 	
 	#Get ur Name back
@@ -48,13 +48,13 @@ async def revert(client: Client, message: Message):
 	#Delte first photo to get ur identify
  photos = await client.get_profile_photos("me")
  await client.delete_profile_photos(photos[0].file_id)
- await message.edit("`I am back!`")
+ await message.edit("`Saya kembali.`")
 
 
 add_command_help(
     "cloner",
     [
-        [".clone", "To Clone someone Profile."],
-        [".revert", "To Get Your Account Back."],
+        [".clone", "Mengkelon."],
+        [".revert", "Kembali seperti semula."],
     ],
 )
