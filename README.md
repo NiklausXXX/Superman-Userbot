@@ -1,6 +1,6 @@
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
-<p align="center">Superman Userbot 🦸🏻‍♂ </p>
+<p align="center"> 𝐒𝐮𝐩𝐞𝐫𝐦𝐚𝐧 𝐔𝐬𝐞𝐫𝐛𝐨𝐭 🦸🏻‍♂ </p>
 
 - A First Telegram Userbot Project With Multi Clients Based On PyroGram
 - Codes doesn't matter how many clients booted it's work separatly with every client! Faster af!
@@ -48,7 +48,7 @@
 <p align="center"><a href="https://youtu.be/nQAyresJTC0"> <img src="https://img.shields.io/badge/Youtube%20Deploy-red?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
 
 ##
-<p align="center">𝐇𝐨𝐬𝐭𝐢𝐧𝐠 𝐔𝐬𝐢𝐧𝐠 ZaidUserBot</p>
+<p align="center">𝐇𝐨𝐬𝐭𝐢𝐧𝐠 𝐔𝐬𝐢𝐧𝐠 SupermanUserBot</p>
 Want Host for a Demo? Just Use https://t.me/SupermanUserbot To Host In seconds!
 Watch Tutorial!
 <p align="center"><a href="https://youtu.be/uFYUAc89cSU"> <img src="https://img.shields.io/badge/ZaidUserBot%20Deploy-red?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
@@ -71,14 +71,14 @@ Watch Tutorial!
 
 <img src="https://telegra.ph/file/97e6de197eba98d2caba5.jpg" align="right" width="350" height="700"/>
 
-### 🚀 Deploy Process
-- Click on the deploy button above and login to your [heroku account](https://heroku.com/login) .
-- Fill your values there.
-- If you don't know how to get config vars : [Please refer here](https://github.com/ITZ-ZAID/Zaid-Vc-Player/blob/main/sample.env)
-- Make sure you fill correct values.
-- Click on **Deploy** button.
-- Please wait till the app gets deployed on heroku. Deploying can take upto **2-3 mins**..
-- When your app is successfully deployed, click on **Manage App** button.
+### 🚀 Proses Deploy
+- Klik tombol sebarkan di atas dan masuk ke [Akun Heroku](https://heroku.com/login) anda.
+- Isi nilai Anda di sana.
+- Jika Anda tidak tahu cara mendapatkan config Vars: [Tekan sini](https://github.com/ITZ-ZAID/Zaid-Vc-Player/blob/main/sample.env)
+- Pastikan Anda mengisi nilai yang benar.
+- Klik tombol **Deploy**.
+- Harap tunggu hingga aplikasi di-deploy di heroku. Deploying bisa memakan waktu hingga **2-3 mins**..
+- Saat aplikasi Anda berhasil diterapkan, klik tombol **Manage App**.
 
 
 ### 🚀 Booting Process
