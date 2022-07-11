@@ -13,13 +13,13 @@ from handlers.help import add_command_help
 async def yt_vid(client: Client, message: Message):
     input_st = message.text
     input_str= input_st.split(" ", 1)[1]
-    pablo = await message.edit_text("`Processing...`")
+    pablo = await message.edit_text("`Sedang diproses...`")
     if not input_str:
         await message.edit_text(
             "`Please Give Me A Valid Input. You Can Check Help Menu To Know More!`"
         )
         return
-    await message.edit_text(f"`Searching {input_str} From Youtube. Please Wait.`")
+    await message.edit_text(f"`Sedang Mencari {input_str} dari Youtube. Tunggu ya hehe.`")
     search = SearchVideos(str(input_str), offset=1, mode="dict", max_results=1)
     rt = search.result()
     result_s = rt["search_result"]
@@ -50,7 +50,7 @@ async def yt_vid(client: Client, message: Message):
         return
     c_time = time.time()
     file_path= f"{ytdl_data['id']}.mp4"
-    capy = f"**Video Name ➠** `{vid_title}` \n**Requested For ➠** `{input_str}` \n**Channel ➠** `{uploade_r}` \n**Link ➠** `{url}`"
+    capy = f"**Video Name ➠** `{vid_title}` \n**Permintaan ➠** `{input_str}` \n**Channel ➠** `{uploade_r}` \n**Link ➠** `{url}`"
     await client.send_video(
         message.chat.id,
         video=open(file_path, "rb"),
