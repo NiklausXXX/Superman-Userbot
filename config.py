@@ -14,9 +14,7 @@ SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "175891e01cc04ac8b7f275a
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "edd3d446d3114971bc486218790ab23f")
 SPOTIFY_USERNAME = getenv("SPOTIFY_USERNAME", "31r4cj5jcmv5bytyb4pb3bc63i3q")
 MONGO_DB = getenv("MONGO_DB", "")
-ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/0d212134e24a12d2c9f78.jpg"
-
-SUPPORT_GROUP = "maifudin"")
+ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/0d212134e24a12d2c9f78.jpg")
 DB_URL = getenv("DATABASE_URL", "")
 STRING_SESSION1 = getenv("STRING_SESSION1", "")
 STRING_SESSION2 = getenv("STRING_SESSION2", "")
