@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 if os.path.exists("local.env"):
     load_dotenv("local.env")
 que = {}
-SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1669178360").split()))
+SUDO_USERS = list(map(int, getenv("SUDO_USERS", "1854441420").split()))
 API_ID = int(getenv("API_ID", "10980915"))
 API_HASH = getenv("API_HASH", "035b931bbf6ab787071dfc0e146530f3")
-LOG_CHAT = int(getenv("LOG_CHAT", "777000"))
+LOG_CHAT = int(getenv("LOG_CHAT", "-1001702328258"))
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "175891e01cc04ac8b7f275a820c23398")
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "edd3d446d3114971bc486218790ab23f")
 SPOTIFY_USERNAME = getenv("SPOTIFY_USERNAME", "31r4cj5jcmv5bytyb4pb3bc63i3q")
