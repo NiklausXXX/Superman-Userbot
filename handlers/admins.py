@@ -22,7 +22,7 @@ async def kick_user(bot: Client, message: Message):
                 user_id=message.reply_to_message.from_user.id,
             )
 
-            await message.edit(f"Goodbye, {mention}.")
+            await message.edit(f"Dadah, {mention} hehe.")
         except UserAdminInvalid:
             await RestrictFailed(message)
 
